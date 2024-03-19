@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,13 +19,7 @@ code {
     monospace;
 }
 
-.top{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
+/* MAIN STYLE  */
 .app {
   width: 100%;
   height: 100vh;
@@ -38,8 +34,30 @@ code {
   padding: 10px;
 }
 
-.main{
+/* SEARCH  */
+.search {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.input {
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 2%;
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.471);
+  border: 2px solid white;
+  -webkit-box-shadow: 2px 2px 25px 6px rgba(255, 255, 255, 0.6);
+  box-shadow: 2px 2px 25px 6px rgba(255, 255, 255, 0.6);
+}
+
+/* MAIN WEATHER  */
+.main {
+  display: flex;
+  flex-direction: row;
   gap: 15px;
   padding: 20px;
   border-radius: 20px;
@@ -48,10 +66,29 @@ code {
   box-shadow: 2px 2px 25px 6px rgba(255, 255, 255, 0.6);
 }
 
+.main-icon {
+  height: 12vh;
+}
+
+.location h2{
+  font-weight: 600;
+}
+
+.temp h1 {
+  font-family: 'Tilt Warp';
+  font-size: xxx-large;
+}
+
+.description p{
+  font-weight: 100;
+  color: rgb(27, 27, 27);
+}
+
+/* BOTTOM WEATHER INFOS  */
 .bottom {
   width: 99%;
   bottom: 10px;
-  margin: 10px;
+  margin: 10px 10px 0 10px;
   padding: 1.5em;
   border-radius: 20px;
   text-align: center;
@@ -63,28 +100,12 @@ code {
   box-shadow: 2px 2px 25px 6px rgba(255, 255, 255, 0.6);
 }
 
-.bottom p {
-  font-size: smaller;
-  color: rgb(37, 36, 36);
-}
-
 .infos-icon {
   width: 9vw;
   max-width: 80px;
 }
 
-.main-icon{
-  height: 12vh;
-}
-
-.input {
-  padding: 15px;
-  border-radius: 20px;
-  border: none;
-  margin-top: 2%;
-  width: 60%;
-  background-color: rgba(255, 255, 255, 0.604);
-  border: 2px solid white;
-  -webkit-box-shadow: 2px 2px 25px 6px rgba(255, 255, 255, 0.6);
-  box-shadow: 2px 2px 25px 6px rgba(255, 255, 255, 0.6);
+.bottom p {
+  font-size: smaller;
+  color: rgb(37, 36, 36);
 }

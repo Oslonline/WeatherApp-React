@@ -5,7 +5,7 @@ import windicon from './images/wind.png';
 import sunsetlogo from './images/sunset.png';
 import humiditylogo from './images/humidity.png';
 
-export function Sunrise() {
+export const Sunrise = () => {
     return (
         <img className='infos-icon'
             src={sunriselogo}

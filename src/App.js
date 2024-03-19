@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { fetchWeatherData } from './utils/api';
-import { kelvinToCelsius, capitalizeFirstLetter } from './utils/utils';
-import { WeatherInfo, WeatherIcon } from './components'
+import { WeatherInfo, MainData } from './components/index'
 
 function App() {
 	const [data, setData] = useState({});
@@ -12,7 +11,6 @@ function App() {
 			fetchWeatherData(location)
 				.then((response) => {
 					setData(response.data);
-					console.log(response.data);
 				})
 				.catch((error) => {
 					console.error('Error fetching weather data:', error);
@@ -23,7 +21,7 @@ function App() {
 
 	return (
 		<div className="app">
-			<div className="top">
+			<div className="search">
 				<h3>Enter your location :</h3>
 				<input
 					value={location}
@@ -34,24 +32,8 @@ function App() {
 					className='input'
 				/>
 			</div>
-			<div className="main">
-				{data.name && (<WeatherIcon data={data} />)}
-				<div className="container">
-					<div className="location">
-						<h2>{data.name}</h2>
-					</div>
-					<div className="temp">
-						{data.main ? <h1>{kelvinToCelsius(data.main.temp).toFixed(1)}°C</h1> : null}
-					</div>
-					<div className="description">
-						{data.weather ? <p>{capitalizeFirstLetter(data.weather[0].description)}</p> : null}
-					</div>
-				</div>
-			</div>
-
-			{data.name && (
-				<WeatherInfo data={data} />
-			)}
+			{data.name && (<MainData data={data} />)}
+			{data.name && (<WeatherInfo data={data} />)}
 		</div>
 	);
 }

@@ -1,2 +1,2 @@
-export { default as WeatherInfo }  from "./InfosBottomComponent";
-export { WeatherIcon } from "./MainIconComponent";
+export { default as MainData } from "./MainDataComponent.js"
+export { WeatherInfo }  from "./InfosBottomComponent.js";
